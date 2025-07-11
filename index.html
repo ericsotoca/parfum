@@ -120,6 +120,22 @@
             border-color: #d4af37;
             box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
         }
+        
+        /* Style ajouté pour la case de consentement */
+        .form-group-consent {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9em;
+            color: #ccc;
+        }
+        .form-group-consent input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+        }
+        .form-group-consent label {
+            line-height: 1.4;
+        }
 
         .submit-btn {
             padding: 15px;
@@ -139,23 +155,6 @@
             background-color: #e6c56d;
         }
         
-        /* --- Message de Confirmation (caché par défaut) --- */
-        #confirmation-message {
-            display: none; /* Caché initialement */
-            text-align: center;
-            padding: 40px 20px;
-            border: 2px solid #d4af37;
-            border-radius: 10px;
-            background: #3a3a42;
-        }
-        
-        #confirmation-message h3 {
-            font-family: 'Lora', serif;
-            font-size: 2em;
-            color: #d4af37;
-            margin-top: 0;
-        }
-
         /* --- Responsive Design --- */
         @media (max-width: 600px) {
             main {
@@ -168,79 +167,57 @@
                 font-size: 1em;
             }
         }
-
     </style>
 </head>
 <body>
-
     <main>
-        <div id="registration-container">
-            <div class="header">
-                <h1>L'Alchimie du Premier Contact</h1>
-                <h2>L'atelier parfum qui transforme les rencontres</h2>
-            </div>
-            
-            <div class="event-details">
-                📅 <strong>Date :</strong> Samedi 18 Novembre<br>
-                🕖 <strong>Heure :</strong> 19h00<br>
-                📍 <strong>Lieu :</strong> Le Salon Privé, 123 Rue de la Rencontre, Paris
-            </div>
-
-            <div class="content">
-                <p>Préparez-vous à une soirée de speed-dating pas comme les autres. Oubliez les questions banales et brisez la glace grâce au pouvoir des odeurs.</p>
-                <p>Participez à notre atelier exclusif pour <strong>découvrir votre signature olfactive</strong>, booster votre confiance et laisser une empreinte mémorable. Une expérience sensorielle conçue pour créer des connexions authentiques.</p>
-            </div>
-            
-            <form id="registration-form">
-                <h3>Réservez Votre Place</h3>
-                
-                <div class="form-group">
-                    <label for="prenom">Prénom</label>
-                    <input type="text" id="prenom" name="prenom" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">Adresse Email</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                
-                <button type="submit" class="submit-btn">Je m'inscris à l'expérience !</button>
-            </form>
+        <div class="header">
+            <h1>L'Alchimie du Premier Contact</h1>
+            <h2>L'atelier parfum qui transforme les rencontres</h2>
+        </div>
+        
+        <div class="event-details">
+            📅 <strong>Date :</strong> Samedi 18 Novembre<br>
+            🕖 <strong>Heure :</strong> 19h00<br>
+            📍 <strong>Lieu :</strong> Le Salon Privé, 123 Rue de la Rencontre, Paris
         </div>
 
-        <div id="confirmation-message">
-            <h3>Merci, <span id="confirm-name"></span> !</h3>
-            <p>Votre inscription est confirmée. Nous avons hâte de vous accueillir pour cette soirée inoubliable.</p>
-            <p>Un email avec tous les détails vous sera envoyé prochainement.</p>
+        <div class="content">
+            <p>Préparez-vous à une soirée de speed-dating pas comme les autres. Oubliez les questions banales et brisez la glace grâce au pouvoir des odeurs.</p>
+            <p>Participez à notre atelier exclusif pour <strong>découvrir votre signature olfactive</strong>, booster votre confiance et laisser une empreinte mémorable. Une expérience sensorielle conçue pour créer des connexions authentiques.</p>
         </div>
+        
+        <!-- ======================= LE FORMULAIRE ======================= -->
+        <form id="registration-form" action="https://formsubmit.co/eric.sotoca@gmail.com" method="POST">
+            <h3>Réservez Votre Place</h3>
+            
+            <div class="form-group">
+                <label for="prenom">Prénom</label>
+                <input type="text" id="prenom" name="prenom" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Adresse Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
 
+            <!-- 
+                ATTENTION : Ligne à mettre à jour ! 
+                Remplacez "LIEN_VERS_VOTRE_PAGE_GITHUB/merci.html" par l'URL réelle de votre page une fois en ligne.
+                Exemple : https://votre-nom.github.io/votre-projet/merci.html
+            -->
+            <input type="hidden" name="_next" value="LIEN_VERS_VOTRE_PAGE_GITHUB/merci.html">
+            
+            <!-- Pour éviter le captcha de base de FormSubmit -->
+            <input type="hidden" name="_captcha" value="false">
+
+            <div class="form-group-consent">
+                <input type="checkbox" id="consent" name="consentement" value="oui" required>
+                <label for="consent">J'accepte de recevoir des informations par email concernant cet événement et les offres associées.</label>
+            </div>
+            
+            <button type="submit" class="submit-btn">Je m'inscris à l'expérience !</button>
+        </form>
     </main>
-
-    <script>
-        // Sélection des éléments du DOM
-        const form = document.getElementById('registration-form');
-        const registrationContainer = document.getElementById('registration-container');
-        const confirmationMessage = document.getElementById('confirmation-message');
-        const confirmNameSpan = document.getElementById('confirm-name');
-
-        // Ajout d'un écouteur d'événement sur la soumission du formulaire
-        form.addEventListener('submit', function(event) {
-            // Empêche le rechargement de la page (comportement par défaut)
-            event.preventDefault(); 
-            
-            // Récupère le prénom entré par l'utilisateur
-            const prenom = document.getElementById('prenom').value;
-            
-            // Met à jour le nom dans le message de confirmation
-            confirmNameSpan.textContent = prenom;
-            
-            // Cache le conteneur du formulaire
-            registrationContainer.style.display = 'none';
-            
-            // Affiche le message de confirmation
-            confirmationMessage.style.display = 'block';
-        });
-    </script>
-
 </body>
 </html>
