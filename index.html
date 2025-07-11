@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription | L'Alchimie du Premier Contact</title>
+    
+    <!-- Polices élégantes depuis Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- Style Général --- */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #1a1a1d; /* Fond sombre et chic */
+            color: #f4f4f4;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            line-height: 1.6;
+            background-image: radial-gradient(circle, rgba(63, 94, 251, 0.1) 0%, rgba(200, 30, 130, 0.1) 100%);
+        }
+
+        /* --- Conteneur Principal --- */
+        main {
+            background-color: #2c2c34;
+            border-radius: 15px;
+            padding: 40px;
+            max-width: 700px;
+            width: 100%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        /* --- Section d'En-tête --- */
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-family: 'Lora', serif;
+            font-size: 2.8em;
+            color: #d4af37; /* Or pour le luxe */
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .header h2 {
+            font-size: 1.2em;
+            font-weight: 300;
+            color: #c7c7c7;
+            margin-top: 10px;
+            font-style: italic;
+        }
+        
+        .event-details {
+            text-align: center;
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+        }
+
+        /* --- Section de Contenu --- */
+        .content p {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+        
+        strong {
+            color: #d4af37;
+            font-weight: 600;
+        }
+
+        /* --- Formulaire d'Inscription --- */
+        #registration-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        #registration-form h3 {
+            font-family: 'Lora', serif;
+            text-align: center;
+            font-size: 1.8em;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #d4af37;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"] {
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #555;
+            background-color: #3a3a42;
+            color: #f4f4f4;
+            font-size: 1em;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #d4af37;
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+        }
+
+        .submit-btn {
+            padding: 15px;
+            background-color: #d4af37;
+            color: #1a1a1d;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.3s;
+            margin-top: 20px;
+        }
+
+        .submit-btn:hover {
+            transform: scale(1.03);
+            background-color: #e6c56d;
+        }
+        
+        /* --- Message de Confirmation (caché par défaut) --- */
+        #confirmation-message {
+            display: none; /* Caché initialement */
+            text-align: center;
+            padding: 40px 20px;
+            border: 2px solid #d4af37;
+            border-radius: 10px;
+            background: #3a3a42;
+        }
+        
+        #confirmation-message h3 {
+            font-family: 'Lora', serif;
+            font-size: 2em;
+            color: #d4af37;
+            margin-top: 0;
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 600px) {
+            main {
+                padding: 20px;
+            }
+            .header h1 {
+                font-size: 2em;
+            }
+            .header h2 {
+                font-size: 1em;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <main>
+        <div id="registration-container">
+            <div class="header">
+                <h1>L'Alchimie du Premier Contact</h1>
+                <h2>L'atelier parfum qui transforme les rencontres</h2>
+            </div>
+            
+            <div class="event-details">
+                📅 <strong>Date :</strong> Samedi 18 Novembre<br>
+                🕖 <strong>Heure :</strong> 19h00<br>
+                📍 <strong>Lieu :</strong> Le Salon Privé, 123 Rue de la Rencontre, Paris
+            </div>
+
+            <div class="content">
+                <p>Préparez-vous à une soirée de speed-dating pas comme les autres. Oubliez les questions banales et brisez la glace grâce au pouvoir des odeurs.</p>
+                <p>Participez à notre atelier exclusif pour <strong>découvrir votre signature olfactive</strong>, booster votre confiance et laisser une empreinte mémorable. Une expérience sensorielle conçue pour créer des connexions authentiques.</p>
+            </div>
+            
+            <form id="registration-form">
+                <h3>Réservez Votre Place</h3>
+                
+                <div class="form-group">
+                    <label for="prenom">Prénom</label>
+                    <input type="text" id="prenom" name="prenom" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Adresse Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <button type="submit" class="submit-btn">Je m'inscris à l'expérience !</button>
+            </form>
+        </div>
+
+        <div id="confirmation-message">
+            <h3>Merci, <span id="confirm-name"></span> !</h3>
+            <p>Votre inscription est confirmée. Nous avons hâte de vous accueillir pour cette soirée inoubliable.</p>
+            <p>Un email avec tous les détails vous sera envoyé prochainement.</p>
+        </div>
+
+    </main>
+
+    <script>
+        // Sélection des éléments du DOM
+        const form = document.getElementById('registration-form');
+        const registrationContainer = document.getElementById('registration-container');
+        const confirmationMessage = document.getElementById('confirmation-message');
+        const confirmNameSpan = document.getElementById('confirm-name');
+
+        // Ajout d'un écouteur d'événement sur la soumission du formulaire
+        form.addEventListener('submit', function(event) {
+            // Empêche le rechargement de la page (comportement par défaut)
+            event.preventDefault(); 
+            
+            // Récupère le prénom entré par l'utilisateur
+            const prenom = document.getElementById('prenom').value;
+            
+            // Met à jour le nom dans le message de confirmation
+            confirmNameSpan.textContent = prenom;
+            
+            // Cache le conteneur du formulaire
+            registrationContainer.style.display = 'none';
+            
+            // Affiche le message de confirmation
+            confirmationMessage.style.display = 'block';
+        });
+    </script>
+
+</body>
+</html>
